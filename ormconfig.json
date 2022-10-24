@@ -1,0 +1,19 @@
+{
+    "type": "postgres",
+    "host": "localhost",
+    "port": 5432,
+    "username": "postgres",
+    "password": "masterkey",
+    "database": "trab_api_typescript",
+    "synchronize": true,
+    "logging": false,
+    "entities": [
+    "src/app/models/*.ts"
+    ],
+    "migrations": [
+        "src/database/migrations/**/*.{ts,js}"
+    ],
+    "cli": {
+        "migrationsDir": "src/database/migrations"
+    }
+}
