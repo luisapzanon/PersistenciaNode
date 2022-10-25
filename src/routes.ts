@@ -3,7 +3,11 @@ import JogadorController from './app/controllers/JogadorController'; // parte 2 
 
 import AuthController from './app/controllers/AuthController'; // parte 3 - importa o controller de autenticação
 
-import EnderecoController from './app/controllers/EnderecoController';
+import EnderecoController from './app/controllers/EnderecoController'; // parte 6
+
+//parte 8
+import PatenteController from './app/controllers/PatenteController';
+import CompraController from './app/controllers/CompraController';
 
 
 
@@ -14,8 +18,16 @@ router.post('/jogador/store', JogadorController.store);
 router.post('/jogador/update', JogadorController.update);
 router.post('/jogador/delete', JogadorController.delete);
 router.post('/jogador/list', JogadorController.list);
+
 router.post('/auth', AuthController.authenticate);
+
 router.post('/endereco/store', EnderecoController.store);
 router.post('/endereco/list', EnderecoController.list);
+
+router.post('/patente/store', PatenteController.store);
+router.post('/patente/list', PatenteController.list);
+
+router.post('/compra/store', CompraController.store);
+router.post('/compra/list', CompraController.list);
 
 export default router; // parte 1 - exporta o router
