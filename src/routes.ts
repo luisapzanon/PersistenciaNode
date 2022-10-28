@@ -9,6 +9,10 @@ import EnderecoController from './app/controllers/EnderecoController'; // parte 
 import PatenteController from './app/controllers/PatenteController';
 import CompraController from './app/controllers/CompraController';
 import ArtefatoController from './app/controllers/ArtefatoController';
+import PartidaController from './app/controllers/PartidaController';
+import ObjetivoController from './app/controllers/ObjetivoController';
+import RoundController from './app/controllers/RoundController';
+import ResultadoController from './app/controllers/ResultadoController';
 
 
 
@@ -35,5 +39,18 @@ router.post('/compra/list', CompraController.list);
 router.post('/artefato/store', ArtefatoController.store);
 router.post('/artefato/list', ArtefatoController.list);
 router.post('/artefato/update', ArtefatoController.update);
+
+//parte 10
+router.post('/partida/store', PartidaController.store);
+router.post('/partida/list', PartidaController.list);
+
+router.post('/objetivo/store', ObjetivoController.store);
+router.post('/objetivo/list', ObjetivoController.list);
+
+router.post('/round/store', RoundController.store);
+router.post('/round/list', RoundController.list);
+
+router.post('/resultado/store', ResultadoController.store);
+router.post('/resultado/list', ResultadoController.list);
 
 export default router; // parte 1 - exporta o router

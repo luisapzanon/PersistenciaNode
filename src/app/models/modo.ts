@@ -1,4 +1,4 @@
-//parte 11
+//parte 10
 export enum Modo {
     TERRORISTA = "TERRORISTA",
     CONTRATERRORISTA = "CONTRATERRORISTA"
