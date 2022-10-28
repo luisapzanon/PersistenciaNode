@@ -8,6 +8,7 @@ import EnderecoController from './app/controllers/EnderecoController'; // parte 
 //parte 8
 import PatenteController from './app/controllers/PatenteController';
 import CompraController from './app/controllers/CompraController';
+import ArtefatoController from './app/controllers/ArtefatoController';
 
 
 
@@ -29,5 +30,10 @@ router.post('/patente/list', PatenteController.list);
 
 router.post('/compra/store', CompraController.store);
 router.post('/compra/list', CompraController.list);
+
+//parte 9
+router.post('/artefato/store', ArtefatoController.store);
+router.post('/artefato/list', ArtefatoController.list);
+router.post('/artefato/update', ArtefatoController.update);
 
 export default router; // parte 1 - exporta o router

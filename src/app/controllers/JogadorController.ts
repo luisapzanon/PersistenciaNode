@@ -6,16 +6,18 @@ import Endereco from '../models/endereco'; // parte 6 - importa model endereco
 class JogadorController {
     //parte 6 delete
     async delete(req: Request, res: Response){
+
         const repository = getRepository(Jogador);
         const {nickname, endereco} = req.body;
         const nicknameExists = await repository.findOne({where :{nickname}});
         if(nicknameExists){
-            await repository.remove(nickname);
+            //modificacao necessaria para remover o jogador do banco, somente ele estava acusando erro: Cannot remove, given value must be an entity, instead "nome" is given.
+            await repository.remove(req.body);
             return res.sendStatus(204);
-        } else{
-            return res.sendStatus(404);
+        }else{
+            res.sendStatus(404);
         }
-        }
+         }
 
     async store(req: Request, res: Response){
 
@@ -36,6 +38,8 @@ class JogadorController {
         const repository = getRepository(Jogador);
         const {nickname, endereco} = req.body;
         const nicknameExists = await repository.findOne({where :{nickname}});
+        console.log(nicknameExists);
+        
         const enderecoExists = await getRepository(Endereco).findOne({where : {"id" : endereco.id}});
         
         if(!endereco || !nicknameExists || !enderecoExists){
