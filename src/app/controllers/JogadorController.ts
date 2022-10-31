@@ -49,12 +49,16 @@ class JogadorController {
         await repository.save(j); //persiste a entidade na tabela.
         return res.json(j);
     }
-    //parte 6 - list
+    //parte 11
+
     async list(req: Request, res: Response){
         const repository = getRepository(Jogador);
+        //realiza um innerjoin para recuperar os dados do endereco decada jogador.
+        //realiza um left joint para trazer os dados da tabela associativa (tb_jogador_patente)
         const lista = await
-        repository.createQueryBuilder('tb_jogador').getMany();
+        repository.createQueryBuilder('tb_jogador').innerJoinAndSelect("tb_jogador.endereco",
+        "endereco").leftJoinAndSelect("tb_jogador.patentes", "patente").getMany();
         return res.json(lista);
-    }
+         }
 }
 export default new JogadorController();

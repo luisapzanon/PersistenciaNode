@@ -53,4 +53,8 @@ router.post('/round/list', RoundController.list);
 router.post('/resultado/store', ResultadoController.store);
 router.post('/resultado/list', ResultadoController.list);
 
+//parte 11
+router.post('/endereco/delete', EnderecoController.delete);
+router.post('/endereco/find', EnderecoController.find);
+
 export default router; // parte 1 - exporta o router
