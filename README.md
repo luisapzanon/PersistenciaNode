@@ -1,9 +1,5 @@
 # persistenciaNode
 Trabalho sobre persistencia em banco de dados utilizando API com NodeJS + Typescript
-
-# Criar migrations
-npx typeorm migration:create -n nomedamigration
-
 # Iniciar
 Npm install
 <br><br> ---Modificar conexao do banco no arquivo ormconfig.json<br>
