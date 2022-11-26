@@ -31,7 +31,9 @@ router.post('/endereco/list', EnderecoController.list);
 
 router.post('/patente/store', PatenteController.store);
 router.post('/patente/list', PatenteController.list);
-
+//controller patente update
+router.post('/patente/update', PatenteController.update);
+router.post('/patente/delete', PatenteController.delete);
 router.post('/compra/store', CompraController.store);
 router.post('/compra/list', CompraController.list);
 
@@ -56,5 +58,6 @@ router.post('/resultado/list', ResultadoController.list);
 //parte 11
 router.post('/endereco/delete', EnderecoController.delete);
 router.post('/endereco/find', EnderecoController.find);
+
 
 export default router; // parte 1 - exporta o router
